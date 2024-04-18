@@ -1,0 +1,63 @@
+<div class="user-cards">
+  <div class="user-card" *ngFor="let user of users">
+    <h3>{{ user.name }}</h3>
+    <div class="detail">
+      <p>Email: {{ user.email }}</p>
+      <p>Phone: {{ user.phone }}</p>
+      <p>Age: {{ user.age }}</p>
+
+      <button class="btn btnEdit" (click)="edit(user)">Edit</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="isEdit" class="edit-form-container" (click)="closeEditForm()">
+  <div class="edit-form" (click)="$event.stopPropagation()">
+    <div>
+      <input
+        type="text"
+        [(ngModel)]="currentUser.name"
+        placeholder="Name"
+        [ngClass]="{ invalid: !isNameValid() }"
+      />
+      <span [ngClass]="{ showError: !isNameValid() }" class="error-msg"
+        >Please enter valid name</span
+      >
+    </div>
+    <div>
+      <input
+        type="text"
+        [(ngModel)]="currentUser.email"
+        placeholder="Email"
+        [ngClass]="{ invalid: !isEmailValid() }"
+      />
+      <span [ngClass]="{ showError: !isEmailValid() }" class="error-msg"
+        >Please enter valid email</span
+      >
+    </div>
+    <div>
+      <input
+        type="text"
+        [(ngModel)]="currentUser.phone"
+        placeholder="Phone"
+        [ngClass]="{ invalid: !isPhoneValid() }"
+      />
+      <span [ngClass]="{ showError: !isPhoneValid() }" class="error-msg"
+        >Please enter valid phone number</span
+      >
+    </div>
+    <div>
+      <input
+        type="number"
+        [(ngModel)]="currentUser.age"
+        placeholder="Age"
+        [ngClass]="{ invalid: !isAgeValid() }"
+      />
+      <span [ngClass]="{ showError: !isAgeValid() }" class="error-msg"
+        >Please enter valid age</span
+      >
+    </div>
+    <button class="btn btnUpdate" (click)="update()" [disabled]="!isValid()">
+      Update
+    </button>
+  </div>
+</div>

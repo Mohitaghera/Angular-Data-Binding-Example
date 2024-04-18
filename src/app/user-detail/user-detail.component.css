@@ -1,0 +1,126 @@
+div {
+  font-family: sans-serif;
+}
+.user-cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 250px);
+  padding: 56px;
+  margin: 64px;
+  border-radius: 8px;
+  gap: 56px;
+
+  background-color: #f3f2f8;
+}
+.user-card {
+  margin-bottom: 10px;
+  background-color: #fff;
+  height: 268px;
+  border-radius: 6px;
+}
+h3 {
+  text-align: center;
+  padding: 18px;
+  margin: 0;
+}
+.detail {
+  padding: 18px;
+  padding-top: 0;
+}
+
+.edit-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-form {
+  position: relative;
+  z-index: 11;
+  border: 2px solid rgb(215, 214, 214);
+  border-radius: 8px;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.edit-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.edit-form input:focus {
+  outline: none;
+  border-color: #495057;
+}
+.btn {
+  background-color: #495057;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-color: #343a40;
+}
+.btnEdit {
+  margin-top: 34px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+}
+.btnUpdate {
+  margin-top: auto;
+  width: 80px;
+  padding: 10px;
+}
+.invalid {
+  border: 1px solid red !important;
+}
+.error-msg {
+  font-size: 12px;
+  color: red;
+  visibility: hidden;
+  opacity: 0;
+}
+.showError {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 811px) {
+  .user-cards {
+    margin: 44px;
+    padding: 44px;
+    gap: 44px;
+  }
+}
+
+@media only screen and (max-width: 447px) {
+  .user-cards {
+    margin: 0;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 0;
+  }
+  .edit-form {
+    gap: 6px;
+    width: 200px;
+  }
+}

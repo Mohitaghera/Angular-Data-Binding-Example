@@ -1,0 +1,11 @@
+h2 {
+  color: #495057;
+  height: 75px;
+  background-color: #f3f2f8;
+  margin: 0;
+  font-family: sans-serif;
+  /* margin-bottom: 32px; */
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
+}
