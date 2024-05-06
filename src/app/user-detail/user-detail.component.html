@@ -39,6 +39,7 @@
         type="text"
         [(ngModel)]="currentUser.phone"
         placeholder="Phone"
+        maxlength="10"
         [ngClass]="{ invalid: !isPhoneValid() }"
       />
       <span [ngClass]="{ showError: !isPhoneValid() }" class="error-msg"
